@@ -1,0 +1,23 @@
+- name: fetch sshtrap
+  get_url:
+    src: "https://github.com/vrischmann/sshtrap/releases/download/{{ sshtrap_version }}/sshtrap-{{ sshtrap_version }}-x86_64-linux"
+    dest: "/usr/local/bin/sshtrap"
+    checksum: "sha256:{{ sshtrap_checksum }}"
+    owner: root
+    group: root
+    mode: 0755
+
+- name: copy the sshtrap service
+  template:
+    src: sshtrap.service.j2
+    dest: /etc/systemd/system/sshtrap.service
+    owner: root
+    group: root
+    mode: 0644
+
+- name: start the sshtrap service
+  systemd:
+    name: sshtrap
+    state: restarted
+    enabled: yes
+    daemon_reload: yes
