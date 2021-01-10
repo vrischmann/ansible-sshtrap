@@ -1,6 +1,6 @@
 - name: fetch sshtrap
   get_url:
-    src: "https://github.com/vrischmann/sshtrap/releases/download/{{ sshtrap_version }}/sshtrap-{{ sshtrap_version }}-x86_64-linux"
+    url: "https://github.com/vrischmann/sshtrap/releases/download/{{ sshtrap_version }}/sshtrap-{{ sshtrap_version }}-x86_64-linux"
     dest: "/usr/local/bin/sshtrap"
     checksum: "sha256:{{ sshtrap_checksum }}"
     owner: root
