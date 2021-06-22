@@ -13,7 +13,7 @@ KillSignal=SIGTERM
 StartLimitInterval=5min
 StartLimitBurst=4
 
-ExecStart={{ sshtrap_binary }}
+ExecStart={{ sshtrap_start_command|default('sshtrap') }}
 
 StandardOutput=journal
 StandardError=journal
