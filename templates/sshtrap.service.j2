@@ -5,8 +5,8 @@ Requires=network-online.target
 [Service]
 Restart=always
 RestartSec=30sec
-User=nobody
-Group=nogroup
+
+DynamicUser=true
 
 KillSignal=SIGTERM
 
