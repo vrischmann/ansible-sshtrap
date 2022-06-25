@@ -2,6 +2,9 @@ galaxy_info:
   author: Vincent Rischmann
   description: Install sshtrap
 
+  role_name: sshtrap
+  namespace: vrischmann
+
   license: MIT
 
   min_ansible_version: 2.9
